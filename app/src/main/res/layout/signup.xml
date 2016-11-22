@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp">
+
+
+        <ImageView
+            android:id="@+id/add_pp_icon"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/placeholder"
+            android:layout_marginBottom="10dp"/>
+
+
+        <EditText
+            android:id="@+id/add_firstname"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_pp_icon"
+            android:layout_marginBottom="50dp"
+            android:hint="first name"
+            android:padding="10dp"
+            android:textAllCaps="true" />
+            <!--android:background="@drawable/shape"-->
+
+
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:id="@+id/add_lastname"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_pp_icon"
+            android:layout_marginBottom="50dp"
+            android:layout_toRightOf="@id/add_firstname"
+            android:hint="last name"
+            android:padding="10dp"
+            android:textAllCaps="true" />
+            <!--android:background="@drawable/shape"-->
+
+
+
+        <TextView
+            android:id="@+id/ph_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_lastname"
+            android:layout_marginTop="10dp"
+            android:text="Phone Number"
+            android:textAllCaps="true" />
+
+
+        <EditText
+            android:id="@+id/ph_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ph_txt"
+            android:hint="Enter your phone number"
+            android:padding="10dp" />
+            <!--android:background="@drawable/shape"-->
+
+
+
+        <TextView
+            android:id="@+id/email_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ph_edit"
+            android:layout_marginTop="10dp"
+            android:text="Email Address"
+            android:textAllCaps="true" />
+
+
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email_txt"
+            android:hint="Enter your email address"
+            android:padding="10dp" />
+            <!--android:background="@drawable/shape"-->
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/submit_userinfo"
+            android:text="submit" />
+
+
+    </RelativeLayout>
+</LinearLayout>
