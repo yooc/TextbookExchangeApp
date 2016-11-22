@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class BrowseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse);
+
+        Button plusPost = (Button) findViewById(R.id.plus_icon);
 
         //Generate ListView
         final ArrayList<Product> browsingList = new ArrayList<>();
@@ -35,6 +38,15 @@ public class BrowseActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        plusPost.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(BrowseActivity.this, PostActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
