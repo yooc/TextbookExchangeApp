@@ -1,5 +1,7 @@
-package com.example.android.textbookexchange;
+package com.example.android.textbookexchange2;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -40,10 +42,34 @@ public class PostActivity extends AppCompatActivity {
         newImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                dispatchTakePictureIntent();
+                selectImage();
             }
         });
+    }
+
+    private void selectImage() { //Creates dialogue box, including onClick listeners
+        final CharSequence[] items = { "Take Photo", "Choose from Library",
+                "Cancel" };
+        AlertDialog.Builder builder = new AlertDialog.Builder(PostActivity.this);
+        builder.setTitle("Add Photo!");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                boolean result=Utility.checkPermission(PostActivity.this);
+                if (items[item].equals("Take Photo")) {
+//                    userChoosenTask="Take Photo";
+                    if(result)
+                        dispatchTakePictureIntent();
+                } else if (items[item].equals("Choose from Library")) {
+//                    userChoosenTask="Choose from Library";
+                    if(result)
+                        galleryIntent();
+                } else if (items[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
     }
 
     private void dispatchTakePictureIntent() {
@@ -67,6 +93,13 @@ public class PostActivity extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
+    }
+
+    private void galleryIntent() //Calls intent to open gallery
+    {
+        Intent pickPhoto = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(pickPhoto , 1);//one can be replaced with any action code
     }
 
     @Override

@@ -1,13 +1,11 @@
-package com.example.android.textbookexchange;
+package com.example.android.textbookexchange2;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,7 +17,14 @@ public class BrowseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.browse);
 
-        Button plusPost = (Button) findViewById(R.id.plus_icon);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.newPost);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newPost = new Intent(BrowseActivity.this, PostActivity.class);
+                startActivity(newPost);
+            }
+        });
 
         //Generate ListView
         final ArrayList<Product> browsingList = new ArrayList<>();
@@ -38,21 +43,6 @@ public class BrowseActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        plusPost.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(BrowseActivity.this, PostActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
-    }
 }

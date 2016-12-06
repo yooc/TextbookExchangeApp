@@ -1,4 +1,4 @@
-package com.example.android.textbookexchange;
+package com.example.android.textbookexchange2;
 
 import android.content.Intent;
 import android.os.Bundle;

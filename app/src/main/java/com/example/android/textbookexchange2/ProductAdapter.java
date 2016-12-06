@@ -1,4 +1,4 @@
-package com.example.android.textbookexchange;
+package com.example.android.textbookexchange2;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;

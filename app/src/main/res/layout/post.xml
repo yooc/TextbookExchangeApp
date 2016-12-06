@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.textbookexchange.PostActivity">
+    tools:context="com.example.android.textbookexchange2.PostActivity">
 
 
     <ScrollView
@@ -118,6 +118,11 @@
                 android:text="images"
                 android:textAllCaps="true" />
 
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView" />
 
             <Button
                 android:id="@+id/addImageButton"
